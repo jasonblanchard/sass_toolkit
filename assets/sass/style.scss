@@ -1,0 +1,123 @@
+//$fontSize: 14px;
+
+@import 'variables';  //importing the "partial" for variables (_variables.scss)
+
+%buttonStyle {
+	//$paddingWidthFactor: 1.5;
+	//$paddingHeightFactor: 1.1;
+	display: block;
+	border-radius: 4px;
+	width: 8*$fontSize;
+	// height: 2.9*$fontSize;
+	// border: 1px solid black;
+	text-align: center;
+	cursor: pointer;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 2px 0px;
+	color: rgb(51, 51, 51);
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;	
+	font-size: $fontSize;
+	padding-top: $paddingHeightFactor*$fontSize; 
+	padding-bottom: $paddingHeightFactor*$fontSize;
+	@extend %standardMargin;
+	// padding-left: $paddingFactor*$fontSize;
+	// padding-top: 20px;
+}
+
+.greenButton{
+	@extend %buttonStyle;
+	background-color: rgb(46, 148, 23);
+
+	&:hover {
+		@extend %hoverOnButton;
+	}
+}
+
+.redButton{
+	@extend %buttonStyle;
+	background-color: rgb(215, 0, 33);
+
+	&:hover {
+		@extend %hoverOnButton;
+	}
+}
+
+.blueButton{
+	@extend %buttonStyle;
+	background-color: rgb(0, 154, 228);
+
+	&:hover {
+		@extend %hoverOnButton;
+	}
+}
+
+%hoverOnButton {
+	opacity: 0.8;
+	color: rgb(15, 15, 15);
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 4px 1px;
+}
+
+.standardBorder {
+	border: 1px solid black;
+}
+
+%standardMargin {
+	margin: 5px;
+}
+
+%standardFont {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+@for $i from 1 through 6 {
+	h#{$i} {@extend %standardFont; font-size:#{42 - 4*$i}px; @if $i<=2 {font-weight: 800} @else {font-weight: 700}; @extend %standardMargin}; //700 is the same as bold
+	%h#{$i} {@extend %standardFont; font-size:#{42 - 4*$i}px; @if $i<=2 {font-weight: 800} @else {font-weight: 700}; @extend %standardMargin};	
+}
+
+p {
+	@extend %standardFont;
+	font-size: $fontSize;
+	@extend %standardMargin;
+}
+
+ul.dropDown {
+	@extend %standardMargin;
+	padding: 0px;
+
+	span.topMenu {
+		@extend %h6;
+		display: inline-block;
+
+		li.subNav {
+			@extend %standardMargin;
+			font-size: $fontSize;
+			font-weight: 550;
+			display: none;
+			color: rgb(51, 51, 51);
+			text-decoration: none;	
+			list-style: none;		
+		}
+
+		&:hover {
+			text-decoration: underline;
+
+			li.subNav {
+				display: block;
+				text-decoration: none;
+
+				&:hover {
+					font-style: italic;
+				}
+			}
+		}
+
+	}
+}
+
+.centerInline {
+	text-align: center;
+}
+
+ul.dropDown li {
+	text-decoration: none;
+}
