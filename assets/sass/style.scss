@@ -84,7 +84,7 @@ ul.dropDown {
 	@extend %standardMargin;
 	padding: 0px;
 
-	span.topMenu {
+	ul.topMenu {
 		@extend %h6;
 		display: inline-block;
 
