@@ -29,10 +29,10 @@
 .standardBorder {
   border: 1px solid black; }
 
-.greenButton, .redButton, .blueButton, h1, h2, h3, h4, h5, h6, ul.dropDown ul.topMenu, p, ul.dropDown, ul.dropDown ul.topMenu li.subNav {
+.greenButton, .redButton, .blueButton, h1, h2, h3, h4, h5, h6, ul.dropDown .topMenu, p, ul.dropDown, ul.dropDown .topMenu li.subNav {
   margin: 5px; }
 
-h1, h2, h3, h4, h5, h6, ul.dropDown ul.topMenu, p {
+h1, h2, h3, h4, h5, h6, ul.dropDown .topMenu, p {
   font-family: Arial, Helvetica, sans-serif; }
 
 h1 {
@@ -59,7 +59,7 @@ h6 {
   font-size: 18px;
   font-weight: 700; }
 
-ul.dropDown ul.topMenu {
+ul.dropDown .topMenu {
   font-size: 18px;
   font-weight: 700; }
 
@@ -68,22 +68,24 @@ p {
 
 ul.dropDown {
   padding: 0px; }
-  ul.dropDown ul.topMenu {
+  ul.dropDown .topMenu {
     display: inline-block; }
-    ul.dropDown ul.topMenu li.subNav {
+    ul.dropDown .topMenu li.subNav {
       font-size: 14px;
       font-weight: 550;
       display: none;
       color: #333333;
       text-decoration: none;
       list-style: none; }
-    ul.dropDown ul.topMenu:hover {
-      text-decoration: underline; }
-      ul.dropDown ul.topMenu:hover li.subNav {
-        display: block;
+      ul.dropDown .topMenu li.subNav a {
         text-decoration: none; }
-        ul.dropDown ul.topMenu:hover li.subNav:hover {
-          font-style: italic; }
+    ul.dropDown .topMenu:hover > span {
+      text-decoration: underline; }
+    ul.dropDown .topMenu:hover li.subNav {
+      display: block;
+      text-decoration: none; }
+      ul.dropDown .topMenu:hover li.subNav:hover {
+        font-style: italic; }
 
 .centerInline {
   text-align: center; }
